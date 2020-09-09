@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>P_share</title>
+        <title>Day</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         <!--追加機能 削除する前の確認機能-->
@@ -63,7 +63,34 @@
 
             @yield('content')
         </div>
-
+        
+        <script>
+            // 音声読み上げ機能
+        
+        // 英語
+        button1.addEventListener("click", () => {
+          if (!window.speechSynthesis) return;
+          let u = new SpeechSynthesisUtterance(content.value);
+          u.lang = "en";
+          speechSynthesis.speak(u);
+        });
+        
+        // 日本語
+        button2.addEventListener("click", () => {
+          if (!window.speechSynthesis) return;
+          let u = new SpeechSynthesisUtterance(content.value);
+          u.lang = "ja";
+          speechSynthesis.speak(u);
+        });
+        
+        // 読み上げ中止
+        button3.addEventListener("click", () => {
+          if (!window.speechSynthesis) return;
+          speechSynthesis.cancel();
+        });
+        
+        </script>
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
