@@ -5,7 +5,7 @@
        
         <div class="form-group row">    
             <div class="offset-2 col-10">
-            <input type="date" name="date">
+            <input type="date" name="date" value="<?php echo date('Y-m-d');?>">
             </div>
         </div>
         

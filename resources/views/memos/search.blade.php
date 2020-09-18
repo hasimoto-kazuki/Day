@@ -12,7 +12,7 @@
                 
                 <div class="form-group">
                     {!! Form::label('date', '日時:') !!}
-                    <input type="date" name="date">
+                    <input type="date" name="date" value="<?php echo date('Y-m-d');?>">
                 </div>
                 
                 
